@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Kuis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login Kuis</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Nama Pengguna:</label>
+                    <input type="text" id="username" name="username" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Masukkan password">
+                </div>
+                <button type="submit">Mulai Kuis</button>
+            </form>
+            <p id="errorMessage" class="error-message">Password salah!</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Password yang valid (contoh: "quiz123")
+            const validPassword = "quiz123";
+
+            if (password === validPassword) {
+                localStorage.setItem('username', username); // Simpan nama pengguna
+                window.location.href = 'quiz.html?question=1'; // Arahkan ke soal pertama
+            } else {
+                document.getElementById('errorMessage').style.display = 'block'; // Tampilkan pesan error
+            }
+        });
+    </script>
+</body>
+</html>

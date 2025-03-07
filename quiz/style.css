@@ -1,0 +1,455 @@
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    color: #fff; /* Warna teks default */
+}
+
+/* Container untuk halaman skor */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border effect */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff; /* Warna teks putih */
+}
+
+/* Skor dan nama pengguna */
+#scoreResult, #usernameDisplay {
+    font-size: 1.2rem;
+    color: #fff; /* Warna teks putih */
+    margin-bottom: 10px;
+}
+
+/* Tombol Main Lagi */
+#playAgain {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #6a11cb; /* Button background */
+    color: #fff; /* Warna teks putih */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#playAgain:hover {
+    background: #2575fc; /* Hover effect */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+#playAgain:active {
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Login Box */
+.login-box {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border effect */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container h1, .container p, #scoreResult, #usernameDisplay{
+    color: black;
+}
+
+/* Heading */
+.login-box h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input background */
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder color */
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.3); /* Focus effect */
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #6a11cb; /* Button background */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #2575fc; /* Hover effect */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+button:active {
+    transform: translateY(0); /* Reset lift effect */
+}
+
+/* Error Message */
+.error-message {
+    display: none;
+    color: #ff6b6b; /* Error message color */
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#errorMessage {
+    color: red;
+    display: none;
+    margin-top: 10px;
+}
+
+/* Warna teks untuk soal */
+.question-title {
+    color: #2c3e50; /* Warna biru tua */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Warna teks untuk jawaban */
+.answer-button {
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #34495e; /* Warna biru keabuan */
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px 0; /* Jarak antar tombol jawaban */
+}
+
+.answer-button img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.answer-button.selected {
+    border-color: #4CAF50; /* Warna hijau saat dipilih */
+    background-color: #e8f5e9; /* Warna hijau muda */
+    color: #2ecc71; /* Warna hijau tua */
+}
+
+.answer-button.wrong {
+    border-color: #e74c3c; /* Warna merah saat salah */
+    background-color: #fdecea; /* Warna merah muda */
+    color: #c0392b; /* Warna merah tua */
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+#scoreResult {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#scoreDescription {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#usernameDisplay {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    grid-template-rows: repeat(2, 1fr); /* 2 baris */
+    gap: 10px; /* Jarak antar kotak */
+    margin: 20px 0;
+}
+
+.quiz-grid button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-grid button:hover {
+    background-color: #45a049;
+}
+
+.quiz-grid button.selected {
+    background-color: #ff9800; /* Warna saat dipilih */
+}
+
+/* Container untuk gambar soal */
+#questionImageContainer {
+    margin-bottom: 20px; /* Jarak antara gambar soal dan jawaban */
+}
+
+/* CSS untuk gambar soal */
+.question-image {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* CSS untuk container jawaban (quiz-grid) */
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 10px; /* Jarak antar tombol jawaban */
+}
+
+/* CSS untuk gambar jawaban */
+.answer-image {
+    max-width: 100%;
+    max-height: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* CSS untuk container kamera dan foto */
+#cameraPreview {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+#photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    margin-top: 20px;
+}
+
+#captureButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#captureButton:hover {
+    background-color: #45a049;
+}
+
+#startCameraButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#startCameraButton:hover {
+    background-color: #0056b3;
+}
+
+#nextButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#nextButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* CSS untuk gambar soal */
+.question-image {
+    max-width: 100%; /* Gambar tidak melebihi lebar container */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border-radius: 8px; /* Sudut melengkung */
+    margin-bottom: 20px; /* Jarak antara gambar dan jawaban */
+}
+
+/* CSS untuk gambar jawaban */
+.answer-button img {
+    max-width: 100%; /* Gambar tidak melebihi lebar tombol */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border-radius: 8px; /* Sudut melengkung */
+    margin-bottom: 10px; /* Jarak antara gambar dan teks jawaban */
+}
+
+/* CSS untuk container jawaban */
+.answer-button {
+    width: 100%; /* Lebar tombol mengisi container */
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #34495e;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px 0; /* Jarak antar tombol jawaban */
+}
