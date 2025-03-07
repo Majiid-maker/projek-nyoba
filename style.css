@@ -26,6 +26,24 @@ body {
     animation: fadeIn 1s ease-in-out; /* Fade-in animation */
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
