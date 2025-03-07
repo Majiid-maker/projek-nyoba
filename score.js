@@ -3,6 +3,7 @@ const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const photo = document.getElementById('photo');
 const captureButton = document.getElementById('captureButton');
+const startCameraButton = document.getElementById('startCameraButton');
 
 // Ambil skor dan nama pengguna dari localStorage
 const score = localStorage.getItem('score') || 0;
@@ -23,6 +24,10 @@ async function startCamera() {
             console.error("Error memulai video:", error);
             alert("Tidak dapat memulai kamera. Pastikan Anda mengizinkan akses kamera.");
         });
+
+        // Tampilkan tombol "Ambil Foto" setelah kamera berhasil diakses
+        captureButton.style.display = 'block';
+        startCameraButton.style.display = 'none'; // Sembunyikan tombol "Akses Kamera"
     } catch (error) {
         console.error("Error mengakses kamera:", error);
         alert("Tidak dapat mengakses kamera. Pastikan Anda mengizinkan akses kamera.");
@@ -55,8 +60,16 @@ function capturePhoto() {
     localStorage.setItem('userPhoto', photoData);
 }
 
-// Event listener untuk tombol ambil foto
+// Event listener untuk tombol "Akses Kamera"
+startCameraButton.addEventListener('click', startCamera);
+
+// Event listener untuk tombol "Ambil Foto"
 captureButton.addEventListener('click', capturePhoto);
 
-// Mulai kamera saat tombol "Akses Kamera" diklik
-document.getElementById('startCameraButton').addEventListener('click', startCamera);
+// Tombol Main Lagi
+document.getElementById('playAgain').addEventListener('click', function () {
+    localStorage.removeItem('score'); // Reset skor
+    localStorage.removeItem('username'); // Hapus nama pengguna
+    localStorage.removeItem('userPhoto'); // Hapus foto pengguna
+    window.location.href = 'index.html'; // Kembali ke halaman login
+});
