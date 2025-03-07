@@ -133,6 +133,13 @@ body {
     color: #333;
 }
 
+/* Pastikan semua section ditampilkan sebagai block */
+.hero-section,
+.content-section,
+footer {
+    display: block;
+    width: 100%;
+}
 /* Hero Section */
 .hero-section {
     height: 100vh; /* Tinggi 100% dari viewport */
