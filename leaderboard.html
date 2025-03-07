@@ -28,7 +28,7 @@
         // Ambil data leaderboard dari backend
         async function fetchLeaderboard() {
             try {
-                const response = await fetch('http://localhost:3000/leaderboard');
+                const response = await fetch('https://quizcoba.netlify.app//leaderboard');
                 const data = await response.json();
 
                 // Tampilkan data di tabel
