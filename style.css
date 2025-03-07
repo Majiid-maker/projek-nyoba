@@ -131,12 +131,24 @@ body {
     line-height: 1.6;
     color: #333;
 }
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
 /* Hero Section */
 .hero-section {
     height: 100vh; /* Satu layar penuh */
     background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-/*     display: flex; */
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -219,6 +231,7 @@ footer {
         font-size: 1rem; /* Ukuran font lebih kecil untuk layar kecil */
     }
 }
+
 /* Login Container */
 .login-container {
     display: flex;
