@@ -60,11 +60,45 @@ function capturePhoto() {
     localStorage.setItem('userPhoto', photoData);
 }
 
+// Fungsi untuk berbagi hasil skor dan foto
+async function shareScore() {
+    const score = localStorage.getItem('score') || 0;
+    const username = localStorage.getItem('username') || "Pengguna";
+    const photoData = localStorage.getItem('userPhoto'); // Data URL foto
+
+    // Buat teks yang akan dibagikan
+    const shareText = `Hai, saya ${username} mendapatkan skor ${score} poin di kuis ini!`;
+
+    try {
+        if (navigator.share) {
+            // Jika Web Share API didukung
+            await navigator.share({
+                title: 'Hasil Kuis Saya',
+                text: shareText,
+                url: photoData, // Jika foto disimpan sebagai URL
+            });
+        } else {
+            // Jika Web Share API tidak didukung, tampilkan pesan
+            alert("Fitur berbagi tidak didukung di browser ini. Silakan salin teks secara manual.");
+        }
+    } catch (error) {
+        console.error("Error berbagi:", error);
+        alert("Gagal berbagi. Silakan coba lagi.");
+    }
+}
+
 // Event listener untuk tombol "Akses Kamera"
 startCameraButton.addEventListener('click', startCamera);
 
 // Event listener untuk tombol "Ambil Foto"
 captureButton.addEventListener('click', capturePhoto);
+
+// Tambahkan tombol share
+const shareButton = document.createElement('button');
+shareButton.innerText = 'Bagikan Hasil';
+shareButton.id = 'shareButton';
+shareButton.addEventListener('click', shareScore);
+document.querySelector('.container').appendChild(shareButton);
 
 // Tombol Main Lagi
 document.getElementById('playAgain').addEventListener('click', function () {
