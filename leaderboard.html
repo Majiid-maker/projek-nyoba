@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leaderboard</h1>
+        <table id="leaderboardTable">
+            <thead>
+                <tr>
+                    <th>Peringkat</th>
+                    <th>Nama</th>
+                    <th>Skor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data leaderboard akan diisi oleh JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Ambil data leaderboard dari backend
+        async function fetchLeaderboard() {
+            try {
+                const response = await fetch('http://localhost:3000/leaderboard');
+                const data = await response.json();
+
+                // Tampilkan data di tabel
+                const tableBody = document.querySelector('#leaderboardTable tbody');
+                tableBody.innerHTML = ''; // Kosongkan tabel sebelum mengisi data baru
+
+                data.forEach((entry, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${entry.username}</td>
+                        <td>${entry.score}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error mengambil leaderboard:', error);
+            }
+        }
+
+        // Jalankan fungsi saat halaman dimuat
+        fetchLeaderboard();
+    </script>
+</body>
+</html>
