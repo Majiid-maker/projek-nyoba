@@ -70,6 +70,34 @@ h1 {
     transform: translateY(-2px); /* Lift effect */
 }
 
+/* CSS untuk tombol upload */
+#uploadButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#uploadButton:hover {
+    background-color: #0056b3;
+}
+
+/* CSS untuk preview foto */
+#photoPreview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#photo {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
 #playAgain:active {
     transform: translateY(0); /* Reset lift effect */
 }
