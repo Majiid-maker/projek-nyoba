@@ -12,6 +12,22 @@ const username = localStorage.getItem('username') || "Pengguna";
 document.getElementById('scoreResult').innerText = `Anda mendapatkan ${score} poin!`;
 document.getElementById('usernameDisplay').innerText = `Nama: ${username}`;
 
+// Periksa apakah ada foto yang sudah tersimpan
+const savedPhoto = localStorage.getItem('userPhoto');
+if (savedPhoto) {
+    photo.src = savedPhoto;
+    photo.style.display = 'block';
+}
+
+// Fungsi untuk mengecek apakah tombol klaim hadiah bisa muncul
+function checkClaimButton() {
+    if (score === 100 && photo.src) {
+        claimButton.style.display = 'block';
+    } else {
+        claimButton.style.display = 'none';
+    }
+}
+
 // Event listener untuk tombol upload
 uploadButton.addEventListener('click', function () {
     uploadPhoto.click(); // Memicu klik pada input file
@@ -27,13 +43,17 @@ uploadPhoto.addEventListener('change', function (event) {
         reader.onload = function (e) {
             photo.src = e.target.result; // Tampilkan foto di elemen <img>
             photo.style.display = 'block'; // Tampilkan foto
-            claimButton.style.display = 'block'; // Tampilkan tombol Klaim Hadiah
             localStorage.setItem('userPhoto', e.target.result); // Simpan foto ke localStorage
+
+            checkClaimButton(); // Cek apakah tombol klaim hadiah bisa muncul
         };
 
         reader.readAsDataURL(file); // Baca file sebagai data URL
     }
 });
+
+// Cek saat halaman dimuat
+checkClaimButton();
 
 // Event listener untuk tombol Klaim Hadiah
 claimButton.addEventListener('click', function () {
