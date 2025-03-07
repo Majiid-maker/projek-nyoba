@@ -197,6 +197,41 @@ label {
     margin: 10px 0 5px;
 }
 
+#shareSnapchat, #shareInstagram {
+    background-color: #fffc00; /* Warna kuning Snapchat */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#shareInstagram {
+    background-color: #e4405f; /* Warna merah muda Instagram */
+    color: white;
+}
+
+#shareSnapchat:hover {
+    background-color: #e6e600;
+}
+
+#shareInstagram:hover {
+    background-color: #d32e4a;
+}
+#shareButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#shareButton:hover {
+    background-color: #0056b3;
+}
 input {
     width: 100%;
     padding: 8px;
