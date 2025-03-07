@@ -7,19 +7,19 @@ const quizQuestions = [
         question: "Mana club liga jerman?",
         image: "images/cat.png",
         answers: {
-            a: { text: "Indonesia", image: "images/rm.png" },
-            b: { text: "Jepang", image: "images/bayern.png" },
-            c: { text: "Korea", image: "images/rb.png" },
-            d: { text: "Amerika", image: "images/fbc.png" }
+            a: { text: "Real Madrid", image: "images/rm.png" },
+            b: { text: "Bayern Munchen", image: "images/bayern.png" },
+            c: { text: "Real Betis", image: "images/rb.png" },
+            d: { text: "Barcelona", image: "images/fbc.png" }
         },
         correctAnswer: "b"
     },
     {
-        question: "Hewan apakah ini?",
+        question: "Manakah foto Majiid papi smaga?",
         image: "images/cat.png",
         answers: {
-            a: { text: "Kucing", image: "images/cat.png" },
-            b: { text: "Anjing", image: "images/dog.png" }
+            a: { text: "Kucing", image: "images/gambar1.jpg" },
+            b: { text: "Anjing", image: "images/gambar2.jpg" }
         },
         correctAnswer: "a"
     },
@@ -38,7 +38,8 @@ const quizQuestions = [
         answers: {
             a: "10",
             b: "12",
-            c: "14"
+            c: "14",
+            d: "16"
         },
         correctAnswer: "b"
     },
@@ -47,7 +48,8 @@ const quizQuestions = [
         answers: {
             a: "Merah",
             b: "Biru",
-            c: "Hijau"
+            c: "Hijau",
+            d: "Kelabu"
         },
         correctAnswer: "b"
     }
