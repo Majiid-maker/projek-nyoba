@@ -4,8 +4,8 @@ const uploadButton = document.getElementById('uploadButton');
 const photo = document.getElementById('photo');
 const claimButton = document.getElementById('claimButton');
 
-// Ambil skor dan nama pengguna dari localStorage
-const score = localStorage.getItem('score') || 0;
+// Inisialisasi skor ke 0 jika tidak ada skor yang tersimpan
+let score = parseInt(localStorage.getItem('score')) || 0;
 const username = localStorage.getItem('username') || "Pengguna";
 
 // Tampilkan skor dan nama pengguna
@@ -37,13 +37,18 @@ uploadPhoto.addEventListener('change', function (event) {
 
 // Event listener untuk tombol Klaim Hadiah
 claimButton.addEventListener('click', function () {
-    window.open('https://www.youtube.com/', '_blank'); // Buka link di tab baru
+    window.open('https://www.example.com', '_blank'); // Buka link di tab baru
 });
 
 // Tombol Main Lagi
 document.getElementById('playAgain').addEventListener('click', function () {
-    localStorage.removeItem('score'); // Reset skor
-    localStorage.removeItem('username'); // Hapus nama pengguna
-    localStorage.removeItem('userPhoto'); // Hapus foto pengguna
-    window.location.href = 'index.html'; // Kembali ke halaman login
+    // Reset skor ke 0
+    localStorage.setItem('score', 0);
+
+    // Hapus data lainnya
+    localStorage.removeItem('username');
+    localStorage.removeItem('userPhoto');
+
+    // Redirect ke halaman login
+    window.location.href = 'index.html';
 });
