@@ -375,19 +375,6 @@ button:hover {
     margin-top: 20px;
 }
 
-#captureButton {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-#captureButton:hover {
-    background-color: #45a049;
-}
 
 #startCameraButton {
     background-color: #007bff;
@@ -401,6 +388,20 @@ button:hover {
 
 #startCameraButton:hover {
     background-color: #0056b3;
+}
+
+#captureButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#captureButton:hover {
+    background-color: #45a049;
 }
 
 #nextButton {
