@@ -9,27 +9,32 @@
 </head>
 <body>
    <div class="container">
-        <h1>Skor Anda</h1>
-        <p id="scoreResult"></p>
-        <p id="usernameDisplay"></p>
-    
-        <!-- Tombol untuk memulai kamera -->
-        <button id="startCameraButton">Akses Kamera</button>
-    
-        <!-- Container untuk kamera dan foto -->
-        <div id="cameraPreview">
-            <video id="video"></video>
-            <canvas id="canvas" style="display: none;"></canvas>
-        </div>
-        <div id="photoResult">
-            <img id="photo" alt="Foto Pengguna">
-        </div>
-    
-        <!-- Tombol untuk mengambil foto (awalnya disembunyikan) -->
-        <button id="captureButton" style="display: none;">Ambil Foto</button>
-    
-        <button id="playAgain">Main Lagi</button>
+    <h1>Skor Anda</h1>
+    <p id="scoreResult"></p>
+    <p id="usernameDisplay"></p>
+
+    <!-- Tombol untuk memulai kamera -->
+    <button id="startCameraButton">Akses Kamera</button>
+
+    <!-- Container untuk kamera dan foto -->
+    <div id="cameraPreview">
+        <video id="video"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
     </div>
+    <div id="photoResult">
+        <img id="photo" alt="Foto Pengguna">
+    </div>
+
+    <!-- Tombol untuk mengambil foto (awalnya disembunyikan) -->
+    <button id="captureButton" style="display: none;">Ambil Foto</button>
+
+    <!-- Tombol untuk berbagi -->
+    <button id="shareButton">Bagikan Hasil</button>
+    <button id="shareSnapchat" onclick="shareToSnapchat()">Bagikan ke Snapchat</button>
+    <button id="shareInstagram" onclick="shareToInstagram()">Bagikan ke Instagram</button>
+
+    <button id="playAgain">Main Lagi</button>
+</div>
     <script src="score.js"></script>
 </body>
 </html>
