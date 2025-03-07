@@ -37,7 +37,7 @@ uploadPhoto.addEventListener('change', function (event) {
 
 // Event listener untuk tombol Klaim Hadiah
 claimButton.addEventListener('click', function () {
-    window.open('https://www.example.com', '_blank'); // Buka link di tab baru
+    window.open('https://www.youtube.com/', '_blank'); // Buka link di tab baru
 });
 
 // Tombol Main Lagi
