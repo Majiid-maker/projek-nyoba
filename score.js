@@ -1,18 +1,21 @@
-// Ambil elemen input file, tombol upload, preview foto, dan tombol Klaim Hadiah
+// Ambil elemen yang diperlukan
 const uploadPhoto = document.getElementById('uploadPhoto');
 const uploadButton = document.getElementById('uploadButton');
 const photo = document.getElementById('photo');
 const claimButton = document.getElementById('claimButton');
+const scoreResult = document.getElementById('scoreResult');
+const usernameDisplay = document.getElementById('usernameDisplay');
+const scoreDescription = document.getElementById('scoreDescription'); // Elemen baru untuk keterangan skor
 
-// Inisialisasi skor ke 0 jika tidak ada skor yang tersimpan
+// Inisialisasi skor dan username
 let score = parseInt(localStorage.getItem('score')) || 0;
 const username = localStorage.getItem('username') || "Pengguna";
 
 // Tampilkan skor dan nama pengguna
-document.getElementById('scoreResult').innerText = `Anda mendapatkan ${score} poin!`;
-document.getElementById('usernameDisplay').innerText = `Nama: ${username}`;
+scoreResult.innerText = `Anda mendapatkan ${score} poin!`;
+usernameDisplay.innerText = `Nama: ${username}`;
 
-// Menentukan keterangan berdasarkan skor
+// Tentukan keterangan skor
 let keterangan = "";
 if (score >= 0 && score <= 40) {
     keterangan = "Kurang";
@@ -24,10 +27,8 @@ if (score >= 0 && score <= 40) {
     keterangan = "Sempurna";
 }
 
-// Menambahkan keterangan di bawah nama pengguna
-const keteranganElement = document.createElement('p');
-keteranganElement.innerText = `Keterangan: ${keterangan}`;
-document.getElementById('usernameDisplay').after(keteranganElement);
+// Tampilkan keterangan skor di dalam elemen HTML
+scoreDescription.innerText = `Keterangan: ${keterangan}`;
 
 // Periksa apakah ada foto yang sudah tersimpan
 const savedPhoto = localStorage.getItem('userPhoto');
