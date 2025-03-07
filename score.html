@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skor Kuis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Skor Anda</h1>
+        <p id="scoreResult"></p>
+        <p id="usernameDisplay"></p>
+    
+        <!-- Tombol untuk memulai kamera -->
+        <button id="startCameraButton">Akses Kamera</button>
+    
+        <!-- Container untuk kamera dan foto -->
+        <div id="cameraPreview">
+            <video id="video"></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+        <div id="photoResult">
+            <img id="photo" alt="Foto Pengguna">
+        </div>
+    
+        <!-- Tombol untuk mengambil foto -->
+        <button id="captureButton" style="display: none;">Ambil Foto</button>
+    
+        <button id="playAgain">Main Lagi</button>
+    </div>
+    <script src="score.js"></script>
+</body>
+</html>
