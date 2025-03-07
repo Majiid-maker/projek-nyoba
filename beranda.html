@@ -4,32 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beranda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh; /* Tinggi 100% dari viewport */
+            background-color: #3498db; /* Warna biru */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 2rem;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+    </style>
 </head>
 <body>
-    <!-- Section 1: Gambar Penuh Layar dengan Ucapan Selamat -->
+
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-content">
-            <h1>Selamat Datang di Kuis Kami!</h1>
-            <p>Tunjukkan pengetahuan Anda dan raih skor tertinggi.</p>
-            <a href="quiz.html" class="cta-button">Mulai Kuis</a>
+        <div>
+            <h1>Selamat Datang</h1>
+            <p>Ini adalah hero section dengan tinggi 100vh.</p>
         </div>
     </section>
 
-    <!-- Section 2: Konten Motivasi -->
+    <!-- Content Section -->
     <section class="content-section">
-        <div class="content">
-            <h2>Kata-Kata Motivasi</h2>
-            <p>"Jangan pernah menyerah, karena kegagalan adalah awal dari kesuksesan."</p>
-            <p>"Belajarlah dari kesalahan, karena itu adalah guru terbaik."</p>
-            <p>"Kesuksesan adalah hasil dari kerja keras dan ketekunan."</p>
-        </div>
+        <h2>Content Section</h2>
+        <p>
+            Ini adalah bagian konten di bawah hero section. Anda bisa menambahkan lebih banyak konten di sini.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque leo a libero tincidunt, 
+            eget fermentum nisi tincidunt. Vivamus euismod, nisi vel consectetur tincidunt, nisl nunc tincidunt nunc, 
+            nec tincidunt nunc nisl nec nunc.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque leo a libero tincidunt, 
+            eget fermentum nisi tincidunt. Vivamus euismod, nisi vel consectetur tincidunt, nisl nunc tincidunt nunc, 
+            nec tincidunt nunc nisl nec nunc.
+        </p>
     </section>
 
-    <!-- Section 3: Footer -->
-    <footer>
-        <p>&copy; 2023 Quiz App. All rights reserved.</p>
-    </footer>
 </body>
 </html>
