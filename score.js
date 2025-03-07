@@ -12,6 +12,23 @@ const username = localStorage.getItem('username') || "Pengguna";
 document.getElementById('scoreResult').innerText = `Anda mendapatkan ${score} poin!`;
 document.getElementById('usernameDisplay').innerText = `Nama: ${username}`;
 
+// Menentukan keterangan berdasarkan skor
+let keterangan = "";
+if (score >= 0 && score <= 40) {
+    keterangan = "Kurang";
+} else if (score === 60) {
+    keterangan = "Cukup";
+} else if (score === 80) {
+    keterangan = "Bagus";
+} else if (score === 100) {
+    keterangan = "Sempurna";
+}
+
+// Menambahkan keterangan di bawah nama pengguna
+const keteranganElement = document.createElement('p');
+keteranganElement.innerText = `Keterangan: ${keterangan}`;
+document.getElementById('usernameDisplay').after(keteranganElement);
+
 // Periksa apakah ada foto yang sudah tersimpan
 const savedPhoto = localStorage.getItem('userPhoto');
 if (savedPhoto) {
