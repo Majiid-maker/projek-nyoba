@@ -4,13 +4,24 @@
 }
 
 .bunga {
-  display: flexbox;
+  display: flex;
   align-items: flex-end;
   justify-content: center;
   min-height: 60vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
-  perspective: 400px;
+  perspective: 1000px;
+  overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
+}
+
+.bunga, .bunga * {
+  box-sizing: border-box; /* Pastikan padding dan border tidak menambah lebar */
+}
+
+.bunga > * {
+  flex-shrink: 1; /* Pastikan elemen anak bisa menyusut jika diperlukan */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 /*   
   position: fixed;
