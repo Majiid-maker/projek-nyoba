@@ -134,12 +134,12 @@
         /* Kalender */
         .calendar {
             margin-top: 2rem;
-            display: inline-block;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
             text-align: center;
+            overflow-x: auto; /* Membuat tabel scrollable di mobile */
         }
 
         .calendar h3 {
@@ -150,7 +150,8 @@
 
         .calendar table {
             border-collapse: collapse;
-            width: 100vh;
+            width: 100%;
+            min-width: 500px; /* Lebar minimal tabel */
         }
 
         .calendar th, .calendar td {
@@ -220,19 +221,9 @@
         <!-- Grid Foto -->
         <div class="photo-grid">
             <img src="images/bayern.png" alt="Foto 1">
-            <img src="images/bayern.png" alt="Foto 1">
-        </div>
-        <div class="photo-grid">
-            <img src="images/fbc.png" alt="Foto 2">
-            <img src="images/fbc.png" alt="Foto 2">
-        </div>
-        <div class="photo-grid">
+            <img src="images/rm.png" alt="Foto 2">
             <img src="images/rb.png" alt="Foto 3">
-            <img src="images/rb.png" alt="Foto 3">
-        </div>
-        <div class="photo-grid">
-            <img src="images/rm.png" alt="Foto 4">
-            <img src="images/rm.png" alt="Foto 4">
+            <img src="images/fbc.png" alt="Foto 4">
         </div>
 
         <!-- Cerita Pendek -->
@@ -314,6 +305,11 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Animasi Bunga dan Hati -->
+        <div class="animation-container">
+            <canvas id="animationCanvas" width="400" height="400"></canvas>
         </div>
 
         <!-- Button Main Sekarang -->
