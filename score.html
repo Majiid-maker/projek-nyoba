@@ -9,28 +9,25 @@
 </head>
 <body>
     <div class="container">
-    <h1>Skor Anda</h1>
-    <p id="scoreResult"></p>
-    <p id="usernameDisplay"></p>
+        <h1>Skor Anda</h1>
+        <p id="scoreResult"></p>
+        <p id="usernameDisplay"></p>
 
-    <!-- Tombol untuk upload foto -->
-    <input type="file" id="uploadPhoto" accept="image/*" style="display: none;">
-    <button id="uploadButton">Upload Foto</button>
+        <!-- Input untuk upload foto -->
+        <input type="file" id="uploadPhoto" accept="image/*" style="display: none;">
+        <button id="uploadButton">Upload Foto</button>
 
-    <!-- Container untuk preview foto -->
-    <div id="photoPreview">
-        <img id="photo" alt="Foto Pengguna">
+        <!-- Container untuk preview foto -->
+        <div id="photoPreview">
+            <img id="photo" alt="Foto Pengguna">
+        </div>
+
+        <!-- Tombol Klaim Hadiah -->
+        <button id="claimButton" style="display: none;">Klaim Hadiah</button>
+
+        <button id="playAgain">Main Lagi</button>
     </div>
-
-    <!-- Tombol Klaim Hadiah -->
-    <button id="claimButton" style="display: none;">Klaim Hadiah</button>
-
-    <!-- Tombol Main Lagi dan Kembali ke Beranda -->
-    <button id="playAgain">Main Lagi</button>
-    <a href="index.html" class="home-button">Kembali ke Beranda</a>
-</div>
 
     <script src="score.js"></script>
 </body>
-
 </html>
