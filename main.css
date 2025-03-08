@@ -5,12 +5,12 @@
 
 .bunga {
   display: flex;
-  align-items: flex;
+  align-items: flex-end;
   justify-content: center;
   min-height: 50vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
-  perspective: 1000px;
+  perspective: 400px;
 }
 /*   
   position: fixed;
