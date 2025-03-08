@@ -10,7 +10,7 @@
   height: 50vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
-  perspective: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
