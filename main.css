@@ -6,7 +6,7 @@
 .bunga {
   display: flex;
   justify-content: center;
-  min-height: 50vh;
+  height: 50vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
   overflow-x: ;
