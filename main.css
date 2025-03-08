@@ -9,8 +9,9 @@
   min-height: 50vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
-  perspective: 1000px;
   overflow-x: ;
+}
+/*   
   position: fixed;
   left: 50%;
   top: 0;
@@ -18,7 +19,7 @@
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);  
-}
+} */
 
 .flowers {
   position: relative;
