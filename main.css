@@ -10,7 +10,8 @@
   min-height: 60vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
-  perspective: 1400px;
+  perspective: 1000px;
+  width:100%;
   overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
 }
 
