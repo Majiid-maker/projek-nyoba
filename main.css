@@ -5,9 +5,9 @@
 
 .bunga {
   display: flex;
-  align-items: flex-end;
+  align-items: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 50vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
   perspective: 1000px;
