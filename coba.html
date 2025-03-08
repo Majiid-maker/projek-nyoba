@@ -84,12 +84,13 @@
             margin-bottom: 1rem;
         }
 
-        /* Grid Foto */
+        /* Grid Foto dengan Animasi */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 2rem;
+            overflow: hidden;
         }
 
         .photo-grid img {
@@ -97,6 +98,49 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+
+        .photo-grid img.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Cerita Pendek */
+        .short-story {
+            margin-top: 3rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .short-story p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tanggal */
+        .date-section {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #e91e63;
+            font-weight: 600;
+        }
+
+        /* Button Main Sekarang */
+        .play-section {
+            margin-top: 2rem;
+        }
+
+        .play-section h3 {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 1rem;
         }
 
         /* Footer */
@@ -136,8 +180,26 @@
         <div class="photo-grid">
             <img src="images/bayern.png" alt="Foto 1">
             <img src="images/fbc.png" alt="Foto 2">
-            <img src="images/rm.png" alt="Foto 3">
-            <img src="images/atm.png" alt="Foto 4">
+            <img src="images/rb.png" alt="Foto 3">
+            <img src="images/rm.png" alt="Foto 4">
+        </div>
+
+        <!-- Cerita Pendek -->
+        <div class="short-story">
+            <h2>Cerita Pendek Kita</h2>
+            <p>Di suatu hari yang cerah, kita berjalan bersama di taman, tertawa dan bercerita tentang mimpi-mimpi kita. Aku masih ingat bagaimana senyummu membuat hari-hariku lebih berwarna.</p>
+            <p>Kita telah melalui banyak hal bersama, dan aku berharap kita akan terus menciptakan kenangan indah seperti ini. Terima kasih telah menjadi bagian dari hidupku.</p>
+        </div>
+
+        <!-- Tanggal -->
+        <div class="date-section">
+            <p>14 Maret 2025</p>
+        </div>
+
+        <!-- Button Main Sekarang -->
+        <div class="play-section">
+            <h3>Ayo Bermain Denganku</h3>
+            <a href="quiz.html" class="cta-button">Main Sekarang</a>
         </div>
     </section>
 
@@ -145,5 +207,22 @@
     <footer>
         <p>&copy; 2023 Selamat Ulang Tahun! Dibuat dengan penuh cinta.</p>
     </footer>
+
+    <script>
+        // Animasi Grid Foto Muncul dari Samping
+        const images = document.querySelectorAll('.photo-grid img');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        images.forEach((img) => {
+            observer.observe(img);
+        });
+    </script>
 </body>
 </html>
