@@ -6,6 +6,8 @@
 .bunga {
   margin-top: 10px;
   justify-content: center;
+  height:50vh;
+  width:100vh;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   overflow: hidden;
 }
