@@ -148,49 +148,40 @@
             margin-bottom: 1rem;
         }
 
-        .calendar .date {
-            font-size: 1.2rem;
-            color: #333;
-            position: relative;
+        .calendar table {
+            border-collapse: collapse;
+            width: 100%;
         }
 
-        .calendar .date::after {
-            content: "🎉";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 1.5rem;
+        .calendar th, .calendar td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .calendar th {
+            background-color: #f4f4f4;
+            font-weight: 600;
+        }
+
+        .calendar td {
+            background-color: #fff;
+        }
+
+        .calendar td.highlight {
+            background-color: #e91e63;
+            color: #fff;
+            font-weight: 600;
         }
 
         /* Animasi Bunga dan Hati */
         .animation-container {
-            position: relative;
             margin-top: 2rem;
-            height: 200px;
-            overflow: hidden;
+            text-align: center;
         }
 
-        .flower, .heart {
-            position: absolute;
-            font-size: 2rem;
-            animation: float 5s infinite ease-in-out;
-        }
-
-        .flower {
-            color: #ff69b4; /* Warna bunga */
-        }
-
-        .heart {
-            color: #e91e63; /* Warna hati */
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        canvas {
+            background-color: transparent;
         }
 
         /* Footer */
@@ -228,10 +219,10 @@
 
         <!-- Grid Foto -->
         <div class="photo-grid">
-            <img src="images/rm.png" alt="Foto 1">
-            <img src="images/bayern.png" alt="Foto 2">
+            <img src="images/bayern.png" alt="Foto 1">
+            <img src="images/fbc.png" alt="Foto 2">
             <img src="images/rb.png" alt="Foto 3">
-            <img src="images/fbc.png" alt="Foto 4">
+            <img src="images/rm.png" alt="Foto 4">
         </div>
 
         <!-- Cerita Pendek -->
@@ -243,14 +234,81 @@
 
         <!-- Kalender -->
         <div class="calendar">
-            <h3>Kalender Spesial</h3>
-            <div class="date">14 Maret 2025</div>
+            <h3>Maret 2025</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Minggu</th>
+                        <th>Senin</th>
+                        <th>Selasa</th>
+                        <th>Rabu</th>
+                        <th>Kamis</th>
+                        <th>Jumat</th>
+                        <th>Sabtu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td class="highlight">14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Animasi Bunga dan Hati -->
         <div class="animation-container">
-            <div class="flower">🌸</div>
-            <div class="heart">❤️</div>
+            <canvas id="animationCanvas" width="400" height="400"></canvas>
         </div>
 
         <!-- Button Main Sekarang -->
@@ -281,37 +339,53 @@
             observer.observe(img);
         });
 
-        // Animasi Bunga dan Hati
-        const animationContainer = document.querySelector('.animation-container');
+        // Animasi Bunga dan Hati dengan Canvas
+        const canvas = document.getElementById('animationCanvas');
+        const ctx = canvas.getContext('2d');
 
-        function createFlower() {
-            const flower = document.createElement('div');
-            flower.classList.add('flower');
-            flower.innerHTML = '🌸';
-            flower.style.left = `${Math.random() * 100}%`;
-            flower.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            animationContainer.appendChild(flower);
+        function drawFlower(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2); // Pusat bunga
+            ctx.fillStyle = '#ff69b4';
+            ctx.fill();
 
-            setTimeout(() => {
-                flower.remove();
-            }, 5000);
+            // Kelopak bunga
+            for (let i = 0; i < 6; i++) {
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate((Math.PI / 3) * i);
+                ctx.beginPath();
+                ctx.ellipse(30, 0, 20, 10, 0, 0, Math.PI * 2);
+                ctx.fillStyle = '#ff69b4';
+                ctx.fill();
+                ctx.restore();
+            }
         }
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = `${Math.random() * 100}%`;
-            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            animationContainer.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
+        function drawHeart(x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y + 10);
+            ctx.bezierCurveTo(x, y, x - 15, y - 20, x, y - 40);
+            ctx.bezierCurveTo(x + 15, y - 20, x, y, x, y + 10);
+            ctx.fillStyle = '#e91e63';
+            ctx.fill();
         }
 
-        setInterval(createFlower, 1000);
-        setInterval(createHeart, 1500);
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Gambar bunga
+            drawFlower(100, 100);
+            drawFlower(300, 200);
+
+            // Gambar hati
+            drawHeart(200, 300);
+            drawHeart(350, 100);
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
     </script>
 </body>
 </html>
