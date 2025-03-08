@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Ulang Tahun!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         /* Reset CSS */
         * {
@@ -84,37 +86,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Grid Foto dengan Animasi */
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 2rem;
-            overflow: hidden;
-        }
-
-        .photo-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform: translateX(-100%);
-            opacity: 0;
-            transition: transform 0.8s ease, opacity 0.8s ease;
-        }
-
-        .photo-grid img.active {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        /* Responsive Grid untuk Mobile */
-        @media (max-width: 768px) {
-            .photo-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
-
         /* Cerita Pendek */
         .short-story {
             margin-top: 3rem;
@@ -175,14 +146,36 @@
             font-weight: 600;
         }
 
-        /* Animasi Bunga dan Hati */
-        .animation-container {
-            margin-top: 2rem;
+        /* Section Kenangan Foto */
+        .memory-section {
+            margin-top: 3rem;
             text-align: center;
         }
 
-        canvas {
-            background-color: transparent;
+        .memory-section h3 {
+            font-size: 2rem;
+            color: #e91e63;
+            margin-bottom: 1.5rem;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 3rem;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Footer */
@@ -216,14 +209,6 @@
             <p>"Semoga kamu selalu diberikan kesehatan, kebahagiaan, dan kesuksesan dalam hidup. Aku bersyukur bisa merayakan hari spesialmu bersamamu."</p>
             <p>"Semoga setiap langkahmu di tahun ini membawa kebaikan dan keberkahan. Aku selalu berdoa yang terbaik untukmu."</p>
             <p>"Terima kasih telah menjadi bagian dari hidupku. Aku mencintaimu lebih dari kata-kata yang bisa kuucapkan."</p>
-        </div>
-
-        <!-- Grid Foto -->
-        <div class="photo-grid">
-            <img src="images/bayern.png" alt="Foto 1">
-            <img src="images/rm.png" alt="Foto 2">
-            <img src="images/rb.png" alt="Foto 3">
-            <img src="images/fbc.png" alt="Foto 4">
         </div>
 
         <!-- Cerita Pendek -->
@@ -307,9 +292,100 @@
             </table>
         </div>
 
-        <!-- Animasi Bunga dan Hati -->
-        <div class="animation-container">
-            <canvas id="animationCanvas" width="400" height="400"></canvas>
+        <!-- Section Kenangan Foto -->
+        <div class="memory-section">
+            <h3>2021</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/rm.png" alt="Foto Kenangan 2021 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/bayern.png" alt="Foto Kenangan 2021 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/rb.png" alt="Foto Kenangan 2021 3">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="memory-section">
+            <h3>2022</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/2022_1.jpg" alt="Foto Kenangan 2022 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2022_2.jpg" alt="Foto Kenangan 2022 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2022_3.jpg" alt="Foto Kenangan 2022 3">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="memory-section">
+            <h3>2023</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/2023_1.jpg" alt="Foto Kenangan 2023 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2023_2.jpg" alt="Foto Kenangan 2023 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2023_3.jpg" alt="Foto Kenangan 2023 3">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="memory-section">
+            <h3>2024</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/2024_1.jpg" alt="Foto Kenangan 2024 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2024_2.jpg" alt="Foto Kenangan 2024 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2024_3.jpg" alt="Foto Kenangan 2024 3">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="memory-section">
+            <h3>2025</h3>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/2025_1.jpg" alt="Foto Kenangan 2025 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2025_2.jpg" alt="Foto Kenangan 2025 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/2025_3.jpg" alt="Foto Kenangan 2025 3">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
 
         <!-- Button Main Sekarang -->
@@ -324,69 +400,21 @@
         <p>&copy; 2023 Selamat Ulang Tahun! Dibuat dengan penuh cinta.</p>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Animasi Grid Foto Muncul dari Samping
-        const images = document.querySelectorAll('.photo-grid img');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.5 });
-
-        images.forEach((img) => {
-            observer.observe(img);
+        // Inisialisasi Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
         });
-
-        // Animasi Bunga dan Hati dengan Canvas
-        const canvas = document.getElementById('animationCanvas');
-        const ctx = canvas.getContext('2d');
-
-        function drawFlower(x, y) {
-            ctx.beginPath();
-            ctx.arc(x, y, 20, 0, Math.PI * 2); // Pusat bunga
-            ctx.fillStyle = '#ff69b4';
-            ctx.fill();
-
-            // Kelopak bunga
-            for (let i = 0; i < 6; i++) {
-                ctx.save();
-                ctx.translate(x, y);
-                ctx.rotate((Math.PI / 3) * i);
-                ctx.beginPath();
-                ctx.ellipse(30, 0, 20, 10, 0, 0, Math.PI * 2);
-                ctx.fillStyle = '#ff69b4';
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        function drawHeart(x, y) {
-            ctx.beginPath();
-            ctx.moveTo(x, y + 10);
-            ctx.bezierCurveTo(x, y, x - 15, y - 20, x, y - 40);
-            ctx.bezierCurveTo(x + 15, y - 20, x, y, x, y + 10);
-            ctx.fillStyle = '#e91e63';
-            ctx.fill();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Gambar bunga
-            drawFlower(100, 100);
-            drawFlower(300, 200);
-
-            // Gambar hati
-            drawHeart(200, 300);
-            drawHeart(350, 100);
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
     </script>
 </body>
 </html>
