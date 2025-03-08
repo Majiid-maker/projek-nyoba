@@ -14,15 +14,6 @@
   overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
 }
 
-.bunga, .bunga * {
-  box-sizing: border-box; /* Pastikan padding dan border tidak menambah lebar */
-}
-
-.bunga > * {
-  flex-shrink: 1; /* Pastikan elemen anak bisa menyusut jika diperlukan */
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
 /*   
   position: fixed;
   left: 50%;
