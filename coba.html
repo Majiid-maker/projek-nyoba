@@ -108,6 +108,13 @@
             opacity: 1;
         }
 
+        /* Responsive Grid untuk Mobile */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
         /* Cerita Pendek */
         .short-story {
             margin-top: 3rem;
@@ -124,23 +131,66 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Tanggal */
-        .date-section {
+        /* Kalender */
+        .calendar {
             margin-top: 2rem;
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calendar h3 {
             font-size: 1.5rem;
             color: #e91e63;
-            font-weight: 600;
-        }
-
-        /* Button Main Sekarang */
-        .play-section {
-            margin-top: 2rem;
-        }
-
-        .play-section h3 {
-            font-size: 1.8rem;
-            color: #e91e63;
             margin-bottom: 1rem;
+        }
+
+        .calendar .date {
+            font-size: 1.2rem;
+            color: #333;
+            position: relative;
+        }
+
+        .calendar .date::after {
+            content: "🎉";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 1.5rem;
+        }
+
+        /* Animasi Bunga dan Hati */
+        .animation-container {
+            position: relative;
+            margin-top: 2rem;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .flower, .heart {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .flower {
+            color: #ff69b4; /* Warna bunga */
+        }
+
+        .heart {
+            color: #e91e63; /* Warna hati */
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Footer */
@@ -178,10 +228,10 @@
 
         <!-- Grid Foto -->
         <div class="photo-grid">
-            <img src="images/bayern.png" alt="Foto 1">
-            <img src="images/fbc.png" alt="Foto 2">
+            <img src="images/rm.png" alt="Foto 1">
+            <img src="images/bayern.png" alt="Foto 2">
             <img src="images/rb.png" alt="Foto 3">
-            <img src="images/rm.png" alt="Foto 4">
+            <img src="images/fbc.png" alt="Foto 4">
         </div>
 
         <!-- Cerita Pendek -->
@@ -191,9 +241,16 @@
             <p>Kita telah melalui banyak hal bersama, dan aku berharap kita akan terus menciptakan kenangan indah seperti ini. Terima kasih telah menjadi bagian dari hidupku.</p>
         </div>
 
-        <!-- Tanggal -->
-        <div class="date-section">
-            <p>14 Maret 2025</p>
+        <!-- Kalender -->
+        <div class="calendar">
+            <h3>Kalender Spesial</h3>
+            <div class="date">14 Maret 2025</div>
+        </div>
+
+        <!-- Animasi Bunga dan Hati -->
+        <div class="animation-container">
+            <div class="flower">🌸</div>
+            <div class="heart">❤️</div>
         </div>
 
         <!-- Button Main Sekarang -->
@@ -223,6 +280,38 @@
         images.forEach((img) => {
             observer.observe(img);
         });
+
+        // Animasi Bunga dan Hati
+        const animationContainer = document.querySelector('.animation-container');
+
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = '🌸';
+            flower.style.left = `${Math.random() * 100}%`;
+            flower.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            animationContainer.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 5000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            animationContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createFlower, 1000);
+        setInterval(createHeart, 1500);
     </script>
 </body>
 </html>
