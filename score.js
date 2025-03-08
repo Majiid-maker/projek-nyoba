@@ -50,7 +50,7 @@ document.getElementById('playAgain').addEventListener('click', function () {
     localStorage.removeItem('userPhoto');
 
     // Redirect ke halaman login
-    window.location.href = 'index.html';
+    window.location.href = 'login.html';
 });
 
 // // Ambil elemen yang diperlukan
