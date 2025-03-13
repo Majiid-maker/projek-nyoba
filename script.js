@@ -7,12 +7,12 @@ const quizQuestions = [
         question: "Manakah foto pacar dari orang di bawah ini?",
         image: "images/202401.jpeg",
         answers: {
-            a: { text: "Majiid", image: "images/wolg.jpeg" },
+            a: { text: "Majiid", image: "images/wolf.jpeg" },
             b: { text: "Jepri", image: "images/jefri.jpg" },
             c: { text: "Angga", image: "images/angga.jpg" },
             d: { text: "Iqbal", image: "images/iqbal.jpg" }
         },
-        correctAnswer: "b"
+        correctAnswer: "a"
     },
     {
         question: "Seberapa Cantik Dara?",
