@@ -37,7 +37,7 @@ uploadPhoto.addEventListener('change', function (event) {
 
 // Event listener untuk tombol Klaim Hadiah
 claimButton.addEventListener('click', function () {
-    window.open('https://www.example.com', '_blank'); // Buka link di tab baru
+    window.open('https://link.dana.id/danakaget?c=srtsqdkm2&r=blTFYc&orderId=20250314101214558915010300166548412812134', '_blank'); // Buka link di tab baru
 });
 
 // Tombol Main Lagi
