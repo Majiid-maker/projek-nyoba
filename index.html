@@ -70,6 +70,10 @@
             background-color: #c2185b; /* Warna pink lebih gelap */
         }
 
+        audio {
+            display: none;
+        }
+
         /* Content Section */
         .content-section {
             padding: 4rem 20px;
@@ -199,13 +203,14 @@
     </style>
 </head>
 <body>
+    <audio id="background-music" src="niki.mp3"></audio>
     <!-- Section 1: Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Selamat Ulang Tahun Bububb!</h1>
             <p>Welcome 20's, Goodbye Teenagers.</p>
-            <a href="#content" class="cta-button">Lihat Pesan Khusus</a>
-        </div>
+            <a href="#content" class="cta-button" id="lihat-pesan-button">Lihat Pesan Khusus</a>
+         </div>
     </section>
 
     <!-- Section 2: Content Section -->
@@ -304,7 +309,7 @@
 
         <!-- Section Kenangan Foto -->
         <div class="memory-section">
-            <h3>2021</h3>
+            <h3>Highschool Romance</h3>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -315,44 +320,6 @@
                     </div>
                     <div class="swiper-slide">
                         <img src="images/2021_3.jpg" alt="Foto Kenangan 2021 3">
-                    </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <div class="memory-section">
-            <h3>2022</h3>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="images/2022_1.jpg" alt="Foto Kenangan 2022 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/2022_2.jpg" alt="Foto Kenangan 2022 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/2022_3.jpg" alt="Foto Kenangan 2022 3">
-                    </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-
-        <div class="memory-section">
-            <h3>2023</h3>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="images/2023_1.jpg" alt="Foto Kenangan 2023 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/2023_2.jpg" alt="Foto Kenangan 2023 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="images/2023_3.jpg" alt="Foto Kenangan 2023 3">
                     </div>
                 </div>
                 <!-- Add Pagination -->
@@ -742,6 +709,14 @@
                 delay: 3000,
                 disableOnInteraction: false,
             },
+        });
+
+        // Memutar musik saat tombol "Lihat Pesan Khusus" diklik
+        const lihatPesanButton = document.getElementById('lihat-pesan-button');
+        const backgroundMusic = document.getElementById('background-music');
+
+        lihatPesanButton.addEventListener('click', () => {
+            backgroundMusic.play(); // Memutar musik
         });
     </script>
 </body>
