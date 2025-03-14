@@ -5,7 +5,7 @@ const questionTitle = document.getElementById('questionTitle');
 const quizQuestions = [
     {
         question: "Manakah foto pacar dari orang di bawah ini?",
-        image: "images/202401.jpeg",
+        image: "images/cantik.jpeg",
         answers: {
             a: { text: "Majiid", image: "images/wolf.jpeg" },
             b: { text: "Jepri", image: "images/jefri.jpg" },
